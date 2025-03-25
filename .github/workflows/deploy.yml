@@ -27,8 +27,9 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
-        source: "dist/"
+        source: "build/*"
         target: "/var/www/my-react-app"
+        strip_components: 1
         
     - name: Restart Nginx (optional)
       uses: appleboy/ssh-action@master
