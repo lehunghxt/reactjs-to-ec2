@@ -21,10 +21,6 @@ jobs:
       run: |
         npm install
         npm run 
-        
-    - name: Get variables
-      run: echo ${{ secrets.EC2_HOST }} ${{ secrets.EC2_USERNAME }}
-        
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       with:
